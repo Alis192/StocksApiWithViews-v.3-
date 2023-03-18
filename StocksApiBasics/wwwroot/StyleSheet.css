@@ -1,46 +1,257 @@
-﻿header {
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #eee;
+}
+
+nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #1a1a1a;
-    padding: 10px 20px;
+    padding: 1rem;
 }
 
 .logo {
-    color: #ffffff;
+    font-size: 2rem;
     font-weight: bold;
-    font-size: 24px;
-    text-transform: uppercase;
+    color: #333;
 }
 
-/* Main content styling */
-.stock-box {
+.menu {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    list-style: none;
+    margin-left: 1rem;
+}
+
+    .menu li {
+        margin-left: 1.5rem;
+    }
+
+    .menu a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+        transition: all 0.2s ease-in-out;
+        padding-bottom: 2px;
+        border-bottom: 2px solid transparent;
+    }
+
+        .menu a:hover {
+            color: #f00;
+            border-bottom: 2px solid #f00;
+        }
+
+.nav-left {
+    display: flex;
     align-items: center;
-    background-color: #f2f2f2;
-    margin: 20px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-.stock-price {
-    font-size: 48px;
-    font-weight: bold;
-    color: #008000;
+.nav-right {
+    display: flex;
+    align-items: center;
 }
 
-.stock-name {
-    font-size: 24px;
+.search-form {
+    display: flex;
+}
+
+    .search-form input[type="text"] {
+        padding: 0.5rem;
+        border-radius: 0.5rem 0 0 0.5rem;
+        border: none;
+    }
+
+    .search-form button[type="submit"] {
+        padding: 0.5rem 1rem;
+        background-color: #f00;
+        color: #fff;
+        border: none;
+        border-radius: 0 0.5rem 0.5rem 0;
+        cursor: pointer;
+    }
+
+.login-button {
+    margin-left: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #f00;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+}
+
+    .login-button:hover {
+        background-color: #333;
+    }
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+
+
+h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+main {
+    max-width: 800px;
+    margin: 2rem auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.company-info {
+    flex-basis: 60%;
+}
+
+.new-order {
+    flex-basis: 30%;
+    margin-top: 2rem;
+}
+
+.company-name {
+    font-size: 2rem;
     font-weight: bold;
-    color: #000080;
-    margin-bottom: 10px;
+    margin-bottom: 0.5rem;
 }
 
 .stock-symbol {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #999;
+}
+
+.stock-price {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+input[type="number"] {
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    margin-right: 1rem;
+}
+
+.buy-button {
+    background-color: #2ecc71;
+    color: #fff;
+}
+
+.sell-button {
+    background-color: #3498db;
+    color: #fff;
+}
+
+
+.parent-container {
+    width: 100%;
+    background-color: #F8F8F8;
+    padding: 20px;
+}
+
+.order-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.order-box {
+    width: 50vh;
+    margin-bottom: 20px;
+    background-color: #FFF;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.order-title {
     font-size: 18px;
     font-weight: bold;
-    color: #000080;
+    color: #3B3B3B;
+    margin-bottom: 10px;
+}
+
+.order-field {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.field-label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #3B3B3B;
+}
+
+.field-value {
+    font-size: 16px;
+    color: #696969;
+}
+
+.order-box hr {
+    margin: 10px 0;
+    border: 0;
+    border-top: 1px solid #CCC;
+}
+
+.parent-container h2 {
+    font-size: 24px;
+    color: #3B3B3B;
+    margin-bottom: 20px;
+}
+
+
+.child-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.buy-orders {
+    max-width: 30%;
+}
+
+.sell-orders {
+    max-width: 30%;
 }

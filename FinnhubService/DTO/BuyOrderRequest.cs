@@ -23,7 +23,7 @@ namespace ServiceContracts.DTO
 
 
         [Range(1, 10000, ErrorMessage = "{0} should be between ${1} and ${2}")]
-        public double? Price { get; set; }
+        public double? Price { get; set; } 
 
 
         /// <summary>

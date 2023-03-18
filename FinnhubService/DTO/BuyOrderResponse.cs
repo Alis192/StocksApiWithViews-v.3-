@@ -11,7 +11,7 @@ namespace ServiceContracts.DTO
         public DateTime? DateAndTimeOfOrder { get; set; }
         public uint? Quantity { get; set; }
         public double? Price { get; set; }
-        public double TradeAmount { get; set; }
+        public double? TradeAmount { get; set; }
 
         public override bool Equals(object? obj)
         {
@@ -41,7 +41,8 @@ namespace ServiceContracts.DTO
                 StockName = order.StockName,
                 DateAndTimeOfOrder = order.DateAndTimeOfOrder,
                 Quantity = order.Quantity,
-                Price = order.Price
+                Price = order.Price,
+                TradeAmount = order.Price * order.Quantity
             };
         }
     }

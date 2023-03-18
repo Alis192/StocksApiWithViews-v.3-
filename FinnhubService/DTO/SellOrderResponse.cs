@@ -11,7 +11,7 @@ namespace ServiceContracts.DTO
         public DateTime? DateAndTimeOfOrder { get; set; }
         public uint? Quantity { get; set; }
         public double? Price { get; set; }
-        public double TradeAmount { get; set; }
+        public double? TradeAmount { get; set; }
 
         public override bool Equals(object? obj) //we override Equals() method, because by default it compares instance of 2 objects, not their values
         {
@@ -44,7 +44,8 @@ namespace ServiceContracts.DTO
                 StockName = order.StockName,
                 DateAndTimeOfOrder = order.DateAndTimeOfOrder,
                 Quantity = order.Quantity,
-                Price = order.Price
+                Price = order.Price,
+                TradeAmount = order.Quantity * order.Price
             };
         }
 

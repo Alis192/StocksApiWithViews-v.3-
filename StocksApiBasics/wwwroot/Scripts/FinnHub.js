@@ -15,13 +15,15 @@ function connectWebSocket() {
         console.log("Finnhub WebSocket disconnected, attempting to reconnect in 5 seconds...");
         setTimeout(function () {
             connectWebSocket();
-        }, 5000);
+        }, 3000);
     };
     ws.onmessage = function (event) {
         const message = JSON.parse(event.data);
         if (message.data) {
             const stockPrice = message.data[0].p;
             stockPriceElem.innerText = stockPrice;
+            document.getElementById("updated").value = stockPrice;
+            console.log(document.getElementById("Price"));
         }
     };
 }
@@ -32,7 +34,7 @@ setInterval(function () {
     if (ws.readyState === WebSocket.OPEN) {
         ws.send(JSON.stringify({ type: "subscribe", symbol: stockSymbol }));
     }
-}, 2000);
+}, 3000);
 
 window.addEventListener("beforeunload", function () {
     console.log("Closing Finnhub WebSocket...");

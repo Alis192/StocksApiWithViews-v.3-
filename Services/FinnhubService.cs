@@ -29,7 +29,7 @@ namespace Services
         {
 
             //get api token from configuration which is in user secret
-            string token = _configuration["userToken"]; // we want to get user token from user secret file inside StocksApiProject.
+            string? token = _configuration["userToken"]; // we want to get user token from user secret file inside StocksApiProject.
 
             //we create a new HttpClient instance using the IHttpClientFactory
             HttpClient httpClient = _httpClientFactory.CreateClient();
@@ -44,14 +44,14 @@ namespace Services
             string responseBody = await response.Content.ReadAsStringAsync();
 
             //we parse json data into a dictionary
-            Dictionary<string, object> jsonCompany = JsonSerializer.Deserialize<Dictionary<string, object>>(responseBody);
+            Dictionary<string, object>? jsonCompany = JsonSerializer.Deserialize<Dictionary<string, object>>(responseBody);
 
             return jsonCompany;
         }
 
         public async Task<Dictionary<string, object>?> GetStockPriceQuote(string stockSymbol)
         {
-            string token = _configuration["userToken"];
+            string? token = _configuration["userToken"];
 
             HttpClient httpClient = _httpClientFactory.CreateClient();
 
@@ -61,7 +61,7 @@ namespace Services
 
             string responseBody = await response.Content.ReadAsStringAsync();
 
-            Dictionary<string, object> jsonPrice = JsonSerializer.Deserialize<Dictionary<string, object>>(responseBody);
+            Dictionary<string, object>? jsonPrice = JsonSerializer.Deserialize<Dictionary<string, object>>(responseBody);
 
             return jsonPrice;
 

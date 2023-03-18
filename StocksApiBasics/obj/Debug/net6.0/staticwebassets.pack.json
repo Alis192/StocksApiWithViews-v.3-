@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\Scripts\\JavaScript.js"
     },
     {
+      "Id": "C:\\Users\\alido\\source\\ASP\\StocksApiBasics\\StocksApiBasics\\wwwroot\\SecondStyle.css",
+      "PackagePath": "staticwebassets\\SecondStyle.css"
+    },
+    {
       "Id": "C:\\Users\\alido\\source\\ASP\\StocksApiBasics\\StocksApiBasics\\wwwroot\\StyleSheet.css",
       "PackagePath": "staticwebassets\\StyleSheet.css"
     },

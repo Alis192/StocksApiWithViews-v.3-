@@ -31,6 +31,8 @@ namespace Services
 
             buy_order.BuyOrderID = Guid.NewGuid();
 
+            buy_order.DateAndTimeOfOrder= DateTime.Now;
+
             _orders.Add(buy_order);
 
             BuyOrderResponse order_response = buy_order.ToBuyOrderResponse();
@@ -47,6 +49,8 @@ namespace Services
             SellOrder order_from_request = request.ToSellOrder();
 
             order_from_request.SellOrderID = Guid.NewGuid();
+
+            order_from_request.DateAndTimeOfOrder = DateTime.Now;
 
             _sellOrders.Add(order_from_request);
 
